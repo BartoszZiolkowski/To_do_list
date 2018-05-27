@@ -11,6 +11,13 @@ class Category(models.Model):
 
     color = ColorField(default='#FF0000')
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.name
+
 
 class Task(models.Model):
     category = models.ForeignKey(
@@ -26,4 +33,9 @@ class Task(models.Model):
         verbose_name='Description'
     )
 
-    
+    class Meta:
+        verbose_name = 'Task'
+        verbose_name_plural = 'Tasks'
+
+    def __str__(self):
+        return self.name
